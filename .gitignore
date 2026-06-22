@@ -1,0 +1,17 @@
+node_modules
+.svelte-kit
+build
+dist
+src-tauri/target
+src-tauri/gen
+.env
+.env.*
+!.env.example
+*.log
+# Ignore Tauri/Rust build artifacts
+src-tauri/target/
+src-tauri/target-*/
+*.pdb
+*.rlib
+*.rmeta
+*.exe

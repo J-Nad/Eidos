@@ -1,0 +1,84 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Eidos",
+  "version": "1.0.0",
+  "identifier": "com.eidos.desktop",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:5173",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../build"
+  },
+  "app": {
+    "withGlobalTauri": false,
+    "windows": [
+      {
+        "label": "main",
+        "title": "Eidos",
+        "url": "index.html",
+        "visible": false,
+        "width": 1200,
+        "height": 800,
+        "minWidth": 900,
+        "minHeight": 620,
+        "center": true,
+        "decorations": true,
+        "transparent": false,
+        "resizable": true,
+        "devtools": false
+      },
+      {
+        "label": "spotlight",
+        "title": "Eidos Command Bar",
+        "url": "spotlight",
+        "visible": true,
+        "width": 660,
+        "height": 82,
+        "x": 0,
+        "y": 100,
+        "decorations": false,
+        "transparent": true,
+        "alwaysOnTop": true,
+        "resizable": false,
+        "skipTaskbar": true,
+        "shadow": false,
+        "focus": true,
+        "devtools": false
+      },
+      {
+        "label": "settings",
+        "title": "Eidos Settings",
+        "url": "settings",
+        "visible": false,
+        "width": 440,
+        "height": 590,
+        "minWidth": 440,
+        "minHeight": 590,
+        "center": true,
+        "decorations": true,
+        "transparent": false,
+        "resizable": false,
+        "devtools": false
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; connect-src 'self' ipc: http://ipc.localhost https://ipc.localhost; script-src 'self' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' asset: http://asset.localhost data: blob:; worker-src 'self' blob:"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "msi",
+    "shortDescription": "Search, find, and forge files instantly.",
+    "longDescription": "Eidos is a native void-to-entity engine for searching and generating files.",
+    "copyright": "Copyright © 2026 Eidos. All rights reserved.",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.ico"
+    ],
+    "windows": {
+      "webviewInstallMode": { "type": "downloadBootstrapper", "silent": true }
+    }
+  }
+}
