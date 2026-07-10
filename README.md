@@ -1,7 +1,7 @@
 # Eidos
 
 Eidos is a Windows-only native Tauri 2 desktop application with a floating command bar and a file-focused creation workspace.......
-
+check
 It builds to a native Windows MSI installer with:
 
 - a compact translucent command bar toggled by `Ctrl+Space`;
